@@ -1,0 +1,7 @@
+.idea
+.vscode
+/.cargo/config.toml
+/target
+/dist
+/pkg
+/node_modules

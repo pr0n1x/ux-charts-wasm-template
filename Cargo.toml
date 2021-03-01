@@ -1,0 +1,37 @@
+[package]
+name = "ux-charts-wasm-template"
+version = "0.1.0"
+authors = ["Maksim Makarov <pr0n1x@yandex.ru>"]
+description = "Development of wasm-version of angular-rust/ux-charts"
+keywords = ["rust", "wasm", "webassembly", "angular-rust", "ux-charts", "wasm-template"]
+readme = "README.md"
+repository = "https://github.com/pr0n1x/ux-charts-wasm-template.git"
+homepage = "https://github.com/pr0n1x/ux-charts-wasm-template#readme"
+edition = "2018"
+license = "MIT"
+
+[lib]
+path = "src/rust/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+ux-charts = { git = "https://github.com/pr0n1x/ux-charts", branch = "feature/wasm-canvas" }
+wasm-bindgen = "0.2"
+wasm-logger = "0.2"
+wee_alloc = { version = "0.4.4", optional = true }
+
+[dependencies.web-sys]
+version = "0.3"
+#optional = true
+features = [
+  #'KeyboardEvent',
+  #"ValidityState",
+  #"CustomEvent",
+  "Node",
+  "Element",
+  "HtmlElement",
+  "Window",
+  "Document",
+  #"CanvasRenderingContext2d",
+]
+
