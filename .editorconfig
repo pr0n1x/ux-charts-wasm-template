@@ -1,0 +1,3 @@
+[*.{rs,js,toml,html}]
+indent_style = space
+indent_size = 2

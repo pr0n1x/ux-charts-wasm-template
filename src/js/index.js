@@ -1,6 +1,6 @@
-
-import("../../pkg").then(module => {
-  // we don't need to explicitly tun app,
-  // because in module used #[wasm_bindgen(start)]
-  //module.run_app();
-});
+import "../scss/styles.scss";
+import("../../pkg")
+  .then(module => {})
+  .catch(reason => {
+    console.error('Wasm module not loaded', reason);
+  });
