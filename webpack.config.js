@@ -11,7 +11,7 @@ module.exports = {
     asyncWebAssembly: true
   },
   entry: {
-    index: "./src/js/index.js"
+    index: "./web/index.js"
   },
   output: {
     path: dist,
@@ -44,8 +44,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: "static",
-          to: ".", //"to" - relative to entry.output
+          from: "web/assets",
+          to: "assets", //"to" - relative to entry.output
           globOptions: {
             ignore: [".gitignore", ".gitkeep"]
           }
@@ -54,7 +54,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: true,
-      template: "./src/index.html",
+      template: "./web/index.html",
       filename: "./index.html" // relative to entry.output
     }),
     new WasmPackPlugin({
